@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9D1E3C952E4A576D00B7CB4B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3C942E4A576D00B7CB4B /* FirebaseAnalytics */; };
+		9D1E3C972E4A576D00B7CB4B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3C962E4A576D00B7CB4B /* FirebaseDatabase */; };
+		9D1E3C992E4A576D00B7CB4B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3C982E4A576D00B7CB4B /* FirebaseFirestore */; };
+		9D1E3C9B2E4A576D00B7CB4B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3C9A2E4A576D00B7CB4B /* FirebaseStorage */; };
+		9D1E3C9D2E4BB58A00B7CB4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E3C9C2E4BB58A00B7CB4B /* GoogleService-Info.plist */; };
+		9D1E3C9F2E4BB76D00B7CB4B /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E3C9E2E4BB76D00B7CB4B /* Secrets.xcconfig */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		9D1E3C6F2E4A565A00B7CB4B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +36,8 @@
 		9D1E3C5B2E4A565900B7CB4B /* WeatherAware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAware.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1E3C6E2E4A565A00B7CB4B /* WeatherAwareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAwareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1E3C782E4A565A00B7CB4B /* WeatherAwareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAwareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1E3C9C2E4BB58A00B7CB4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9D1E3C9E2E4BB76D00B7CB4B /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +63,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1E3C972E4A576D00B7CB4B /* FirebaseDatabase in Frameworks */,
+				9D1E3C9B2E4A576D00B7CB4B /* FirebaseStorage in Frameworks */,
+				9D1E3C952E4A576D00B7CB4B /* FirebaseAnalytics in Frameworks */,
+				9D1E3C992E4A576D00B7CB4B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +90,12 @@
 		9D1E3C522E4A565900B7CB4B = {
 			isa = PBXGroup;
 			children = (
+				9D1E3C9E2E4BB76D00B7CB4B /* Secrets.xcconfig */,
 				9D1E3C5D2E4A565900B7CB4B /* WeatherAware */,
 				9D1E3C712E4A565A00B7CB4B /* WeatherAwareTests */,
 				9D1E3C7B2E4A565A00B7CB4B /* WeatherAwareUITests */,
 				9D1E3C5C2E4A565900B7CB4B /* Products */,
+				9D1E3C9C2E4BB58A00B7CB4B /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +129,10 @@
 			);
 			name = WeatherAware;
 			packageProductDependencies = (
+				9D1E3C942E4A576D00B7CB4B /* FirebaseAnalytics */,
+				9D1E3C962E4A576D00B7CB4B /* FirebaseDatabase */,
+				9D1E3C982E4A576D00B7CB4B /* FirebaseFirestore */,
+				9D1E3C9A2E4A576D00B7CB4B /* FirebaseStorage */,
 			);
 			productName = WeatherAware;
 			productReference = 9D1E3C5B2E4A565900B7CB4B /* WeatherAware.app */;
@@ -195,6 +216,9 @@
 			);
 			mainGroup = 9D1E3C522E4A565900B7CB4B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9D1E3C932E4A574300B7CB4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9D1E3C5C2E4A565900B7CB4B /* Products */;
 			projectDirPath = "";
@@ -212,6 +236,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1E3C9D2E4BB58A00B7CB4B /* GoogleService-Info.plist in Resources */,
+				9D1E3C9F2E4BB76D00B7CB4B /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +619,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9D1E3C932E4A574300B7CB4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9D1E3C942E4A576D00B7CB4B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D1E3C932E4A574300B7CB4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		9D1E3C962E4A576D00B7CB4B /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D1E3C932E4A574300B7CB4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		9D1E3C982E4A576D00B7CB4B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D1E3C932E4A574300B7CB4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		9D1E3C9A2E4A576D00B7CB4B /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D1E3C932E4A574300B7CB4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9D1E3C532E4A565900B7CB4B /* Project object */;
 }
