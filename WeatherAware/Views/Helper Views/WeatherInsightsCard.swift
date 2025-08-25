@@ -1,9 +1,6 @@
-//
 //  WeatherInsightsCard.swift
 //  WeatherAware
-//
-//  Created by Spencer Jones on 8/22/25.
-//
+//  Created by Spencer Jones on 8/22/25
 
 import Foundation
 import SwiftUI
@@ -17,13 +14,13 @@ struct WeatherInsightsCard: View {
                 .fontWeight(.semibold)
             
             VStack(spacing: 8) {
-                if weather.current.temp < 10 {
+                if weather.current.temp < 32 {
                     InsightRow(
                         icon: "snowflake",
                         text: "It's quite cold today. Consider layering and warm outerwear.",
                         color: .blue
                     )
-                } else if weather.current.temp > 25 {
+                } else if weather.current.temp > 65 {
                     InsightRow(
                         icon: "sun.max.fill",
                         text: "It's warm today. Light, breathable clothing recommended.",
@@ -70,15 +67,15 @@ struct WeatherInsightsCard: View {
         dt: Int(Date().timeIntervalSince1970),
         sunrise: nil,
         sunset: nil,
-        temp: 28,                 // warm for insight test
+        temp: 28,
         feelsLike: 30,
         pressure: 1012,
-        humidity: 75,             // high humidity
+        humidity: 75,
         dewPoint: 22,
         uvi: 6,
         clouds: 20,
         visibility: 10000,
-        windSpeed: 6,             // windy
+        windSpeed: 6,
         windDeg: 180,
         windGust: nil,
         weather: [
@@ -106,7 +103,7 @@ struct WeatherInsightsCard: View {
             windGust: nil,
             weather: [OneCallWeatherData.Weather(id: 500, main: "Rain", description: "light rain", icon: "10d")],
             clouds: 20,
-            pop: 0.6,              // high precipitation chance
+            pop: 0.6,              
             uvi: 6
         )
     ]

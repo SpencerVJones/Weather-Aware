@@ -35,7 +35,7 @@ struct ClothingItemPreview: View {
     private func iconForClothingType(_ type: ClothingItem.ClothingType) -> String {
         switch type {
         case .top: return "tshirt"
-        case .bottom: return "rectangle"
+        case .bottom: return "button.angledbottom.horizontal.right"
         case .outerwear: return "jacket"
         case .shoes: return "shoe"
         case .accessory: return "eyeglasses"
@@ -55,5 +55,5 @@ struct ClothingItemPreview: View {
 
 // MARK: PREVIEW
 #Preview {
-    ClothingItemPreview(item: .init(name: "Test Item", type: .top, minTemp: 0, maxTemp: 100, weatherTypes: [], occasion: .casual, color: "Blue", isLayerable: false)).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    ClothingItemPreview(item: .init(name: "Test Item", type: .bottom, minTemp: 0, maxTemp: 100, weatherTypes: [], occasion: .casual, color: "Blue", isLayerable: false)).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }

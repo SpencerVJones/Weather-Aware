@@ -6,7 +6,7 @@ import Foundation
 
 class RecommendationEngine: ObservableObject {
     @Published var currentRecommendation: OutfitRecommendation?
-    @Published var weeklyRecommendations: [WeeklyRecommendation] = []
+//    @Published var weeklyRecommendations: [WeeklyRecommendation] = []
     
     private let wardrobeManager: WardrobeManager
     
@@ -34,37 +34,37 @@ class RecommendationEngine: ObservableObject {
         }
     }
     
-    func generateWeeklyRecommendations(for weather: OneCallWeatherData) {
-        var recommendations: [WeeklyRecommendation] = []
-        
-        for (index, dailyWeather) in weather.daily.enumerated() {
-            let date = Date().addingTimeInterval(TimeInterval(index * 86400)) // Add days
-            let temperature = dailyWeather.temp.day
-            let weatherCondition = dailyWeather.weather.first?.description ?? "Clear"
-            let weatherMain = dailyWeather.weather.first?.main ?? "Clear"
-            
-            let suitableItems = wardrobeManager.clothingItems.filter { item in
-                item.isSuitableFor(temperature: temperature) && item.isSuitableFor(weather: weatherMain)
-            }
-            
-            let recommendation = createOptimalOutfit(
-                from: suitableItems,
-                temperature: temperature,
-                weatherCondition: weatherCondition,
-                date: date
-            )
-            
-            recommendations.append(WeeklyRecommendation(
-                date: date,
-                weather: dailyWeather,
-                recommendation: recommendation
-            ))
-        }
-        
-        DispatchQueue.main.async {
-            self.weeklyRecommendations = recommendations
-        }
-    }
+//    func generateWeeklyRecommendations(for weather: OneCallWeatherData) {
+//        var recommendations: [WeeklyRecommendation] = []
+//        
+//        for (index, dailyWeather) in weather.daily.enumerated() {
+//            let date = Date().addingTimeInterval(TimeInterval(index * 86400)) // Add days
+//            let temperature = dailyWeather.temp.day
+//            let weatherCondition = dailyWeather.weather.first?.description ?? "Clear"
+//            let weatherMain = dailyWeather.weather.first?.main ?? "Clear"
+//            
+//            let suitableItems = wardrobeManager.clothingItems.filter { item in
+//                item.isSuitableFor(temperature: temperature) && item.isSuitableFor(weather: weatherMain)
+//            }
+//            
+//            let recommendation = createOptimalOutfit(
+//                from: suitableItems,
+//                temperature: temperature,
+//                weatherCondition: weatherCondition,
+//                date: date
+//            )
+//            
+//            recommendations.append(WeeklyRecommendation(
+//                date: date,
+//                weather: dailyWeather,
+//                recommendation: recommendation
+//            ))
+//        }
+//        
+//        DispatchQueue.main.async {
+//            self.weeklyRecommendations = recommendations
+//        }
+//    }
     
     private func createOptimalOutfit(
         from items: [ClothingItem],

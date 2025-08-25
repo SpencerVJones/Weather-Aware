@@ -40,7 +40,7 @@ struct HomeView: View {
                             .frame(maxWidth: .infinity, minHeight: 100)
                     } else if let weather = weatherService.currentWeather {
                         // Weather Card
-                        WeatherCardV2(weather: weather)
+                        WeatherCard(weather: weather)
                             .padding(.horizontal)
                         
                         // Outfit Recommendation

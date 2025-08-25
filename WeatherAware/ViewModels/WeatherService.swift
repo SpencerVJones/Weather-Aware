@@ -92,7 +92,7 @@ class WeatherService: ObservableObject {
         // Use Current Weather API (completely free)
         let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apiKey)&units=metric"
         
-        print("🔗 Current Weather URL: \(urlString)")
+        print("Current Weather URL: \(urlString)")
         
         guard let url = URL(string: urlString) else {
             throw WeatherError.invalidURL
@@ -114,7 +114,7 @@ class WeatherService: ObservableObject {
         // Debug: Print response preview
         if let responseString = String(data: data, encoding: .utf8) {
             let preview = String(responseString.prefix(300))
-            print("🔍 Current Weather response preview: \(preview)")
+            print("Current Weather response preview: \(preview)")
         }
         
         do {

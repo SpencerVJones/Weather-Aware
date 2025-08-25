@@ -34,13 +34,13 @@ struct ContentView: View {
                     Text("Wardrobe")
                 }
             
-            WeeklyForecastView()
-                .environmentObject(weatherService)
-                .environmentObject(recommendationEngine)
-                .tabItem {
-                    Image(systemName: "calendar")
-                    Text("Weekly")
-                }
+//            WeeklyForecastView()
+//                .environmentObject(weatherService)
+//                .environmentObject(recommendationEngine)
+//                .tabItem {
+//                    Image(systemName: "calendar")
+//                    Text("Weekly")
+//                }
         }
         .accentColor(.weatherBlue)
     }

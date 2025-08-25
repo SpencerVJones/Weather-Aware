@@ -1,9 +1,6 @@
-//
 //  ClothingTypeChip.swift
 //  WeatherAware
-//
-//  Created by Spencer Jones on 8/22/25.
-//
+//  Created by Spencer Jones on 8/22/25
 
 import Foundation
 import SwiftUI
