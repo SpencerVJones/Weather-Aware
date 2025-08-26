@@ -5,6 +5,7 @@
 
 import Foundation
 import Combine
+import CoreLocation
 
 class WeatherService: ObservableObject {
     @Published var currentWeather: OneCallWeatherData?
@@ -21,7 +22,7 @@ class WeatherService: ObservableObject {
         }
         
         do {
-            print("🌍 Fetching weather for: \(cityName)")
+            print("Fetching weather for: \(cityName)")
             
             // Get coordinates for the city
             let coordinates = try await geocodeCity(cityName)
@@ -35,6 +36,37 @@ class WeatherService: ObservableObject {
             print("Successfully fetched current weather")
             
             // Convert to OneCallWeatherData format for compatibility
+            let oneCallData = convertToOneCallFormat(currentWeather, coordinates: coordinates)
+            
+            await MainActor.run {
+                self.currentWeather = oneCallData
+                self.isLoading = false
+            }
+        } catch {
+            print("Weather fetch error: \(error)")
+            
+            await MainActor.run {
+                self.errorMessage = error.friendlyMessage
+                self.isLoading = false
+            }
+        }
+    }
+    
+    func fetchWeather(lat: Double, lon: Double) async {
+        await MainActor.run {
+            isLoading = true
+            errorMessage = nil
+        }
+        
+        do {
+            print("🌍 Fetching weather for coordinates: \(lat), \(lon)")
+            
+            // Fetch current weather
+            let currentWeather = try await fetchCurrentWeather(lat: lat, lon: lon)
+            print("Successfully fetched current weather")
+            
+            // Convert to OneCallWeatherData
+            let coordinates = GeocodingResult(name: "", localNames: nil, lat: lat, lon: lon, country: "", state: nil)
             let oneCallData = convertToOneCallFormat(currentWeather, coordinates: coordinates)
             
             await MainActor.run {

@@ -7,13 +7,18 @@ import SwiftUI
 
 struct CompactClothingItemPreview: View {
     let item: ClothingItem
-    
+
     var body: some View {
-        VStack(spacing: 4) {
-            Image(systemName: iconForClothingType(item.type))
-                .font(.title3)
-                .foregroundColor(colorForClothingType(item.type))
-            
+        VStack(spacing: 6) {
+            // If imageData exists, show it, else show SF Symbol for clothing type
+            ClothingImageView(
+                imageData: item.imageData,
+                placeholderSystemName: iconForClothingType(item.type)
+            )
+            .frame(width: 44, height: 44)
+            .background(Color(.systemGray6))
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+
             Text(item.name)
                 .font(.caption2)
                 .multilineTextAlignment(.center)
@@ -21,7 +26,7 @@ struct CompactClothingItemPreview: View {
                 .truncationMode(.tail)
         }
         .padding(6)
-        .frame(minHeight: 50)
+        .frame(minHeight: 70)
         .background(Color(.systemGray6))
         .cornerRadius(8)
     }

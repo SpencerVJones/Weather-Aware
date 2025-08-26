@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>WeatherAware uses your location to get the local forecast.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>WeatherAware lets you attach a photo to your clothing item.</string>
+</dict>
+</plist>

@@ -15,6 +15,9 @@ struct ClothingItem: Codable, Identifiable {
     var color: String
     var isLayerable: Bool
     
+    // Store image as JPEG/PNG bytes
+        var imageData: Data? = nil
+    
     enum ClothingType: String, CaseIterable, Codable {
         case top = "Top"
         case bottom = "Bottom"

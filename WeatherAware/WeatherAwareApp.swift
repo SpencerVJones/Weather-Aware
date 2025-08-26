@@ -16,12 +16,21 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct WeatherAwareApp: App {
+    @StateObject private var weatherService = WeatherService()
+    @StateObject private var recommendationEngine = RecommendationEngine(wardrobeManager: WardrobeManager())
+        @StateObject private var wardrobeManager = WardrobeManager()
+        @StateObject private var locationManager = LocationManager()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     let persistenceController = PersistenceController.shared
     
     var body: some Scene {
         WindowGroup {
             ContentView()
+               .environmentObject(weatherService)
+               .environmentObject(recommendationEngine)
+               .environmentObject(wardrobeManager)
+               .environmentObject(locationManager)
+               .onAppear { locationManager.request() } // ask on launch
                 .onAppear {
                     setupAppearance()
                 }
