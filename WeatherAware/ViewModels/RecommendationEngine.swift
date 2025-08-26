@@ -6,8 +6,6 @@ import Foundation
 
 class RecommendationEngine: ObservableObject {
     @Published var currentRecommendation: OutfitRecommendation?
-//    @Published var weeklyRecommendations: [WeeklyRecommendation] = []
-    
     private let wardrobeManager: WardrobeManager
     
     init(wardrobeManager: WardrobeManager) {
@@ -15,7 +13,7 @@ class RecommendationEngine: ObservableObject {
     }
     
     func generateRecommendation(for weather: OneCallWeatherData) {
-        let temperature = weather.current.temp
+        let temperature = weather.current.temp    
         let weatherCondition = weather.current.weather.first?.description ?? "Clear"
         let weatherMain = weather.current.weather.first?.main ?? "Clear"
         
@@ -59,8 +57,9 @@ class RecommendationEngine: ObservableObject {
             }
         }
         
-        // Add outerwear if temperature is low or weather is harsh
-        if temperature < 15 || weatherCondition.lowercased().contains("rain") || weatherCondition.lowercased().contains("snow") {
+        // Add outerwear if temperature is cool/cold or weather is harsh
+        // °F thresholds: < 59°F (~15°C), or rainy/snowy
+        if temperature < 59 || weatherCondition.lowercased().contains("rain") || weatherCondition.lowercased().contains("snow") {
             let outerwearItems = items.filter { $0.type == .outerwear }
             if let outerwear = selectBestItem(from: outerwearItems, temperature: temperature) {
                 outfit.append(outerwear)
@@ -101,8 +100,7 @@ class RecommendationEngine: ObservableObject {
             let distanceFromCenter = abs(temperature - tempCenter)
             
             // Prefer items with smaller distance from center and reasonable range
-            let score = 1.0 / (1.0 + distanceFromCenter) + (tempRange > 20 ? 0.1 : 0.2)
-            
+            let score = 1.0 / (1.0 + distanceFromCenter) + (tempRange > 36 ? 0.1 : 0.2) // 20°C ~ 36°F
             return (item, score)
         }
         

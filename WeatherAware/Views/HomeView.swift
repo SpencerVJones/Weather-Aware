@@ -39,46 +39,6 @@ struct HomeView: View {
                         }
                         .padding(.horizontal)
                         
-    //                    // City Input
-    //                    VStack(alignment: .leading, spacing: 8) {
-    //                        Text("Location")
-    //                            .font(.headline)
-    //
-    //                        HStack {
-    //                            TextField("Enter city name", text: $cityName)
-    //                                .textFieldStyle(RoundedBorderTextFieldStyle())
-    //
-    //                            Button("Update") {
-    //                                Task {
-    //                                    await weatherService.fetchWeatherForCity(cityName)
-    //                                }
-    //                            }
-    //                            .buttonStyle(.borderedProminent)
-    //                            .disabled(weatherService.isLoading)
-    //                        }
-    //                    }
-    //                    .padding(.horizontal)
-                        
-                        
-    //                    if weatherService.isLoading {
-    //                        ProgressView("Loading weather...")
-    //                            .frame(maxWidth: .infinity, minHeight: 100)
-    //
-    //
-    //
-    //                    } else if let weather = weatherService.currentWeather {
-    //                        // Weather Card
-    //                        WeatherCard(weather: weather)
-    //                            .padding(.horizontal)
-    //
-    //                        // Outfit Recommendation
-    //                        OutfitRecommendationCard(recommendation: recommendationEngine.currentRecommendation)
-    //                            .padding(.horizontal)
-    //
-    //                        // Quick Weather Insights
-    //                        WeatherInsightsCard(weather: weather)
-    //                            .padding(.horizontal)
-                        
                         
                         if weatherService.isLoading {
                             ProgressView("Loading weather...")
@@ -101,12 +61,6 @@ struct HomeView: View {
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(.secondary)
                                 
-    //                            Button("Try Again") {
-    //                                Task {
-    //                                    await weatherService.fetchWeatherForCity(cityName)
-    //                                }
-    //                            }
-    //                            .buttonStyle(.borderedProminent)
                                 
                                 Button("Try Again") {
                                     Task {
@@ -118,41 +72,7 @@ struct HomeView: View {
                             .padding()
                             .frame(maxWidth: .infinity, minHeight: 200)
                             
-    //                        }
-    //                        .padding()
-    //                        .frame(maxWidth: .infinity, minHeight: 200)
-    //                    } else {
-    //                        // Initial state
-    //                        VStack(spacing: 16) {
-    //                            Image(systemName: "cloud.sun")
-    //                                .font(.system(size: 50))
-    //                                .foregroundColor(.weatherBlue)
-    //
-    //                            Text("Welcome to WeatherAware")
-    //                                .font(.title2)
-    //                                .fontWeight(.semibold)
-    //
-    //                            Text("Enter a city name to get started with personalized outfit recommendations")
-    //                                .multilineTextAlignment(.center)
-    //                                .foregroundColor(.secondary)
-    //                        }
-    //                        .padding()
-    //                        .frame(maxWidth: .infinity, minHeight: 200)
-    //                    }
-    //                }
-    //                .padding(.bottom, 20)
-    //            }
-    //            .navigationTitle("Today")
-    //            .onAppear {
-    //                Task {
-    //                    await weatherService.fetchWeatherForCity(cityName)
-    //                }
-    //            }
-    //            .onChange(of: weatherService.currentWeather?.current.temp) { _ in
-    //                if let weather = weatherService.currentWeather {
-    //                    recommendationEngine.generateRecommendation(for: weather)
-    //                }
-    //            }
+   
                         } else {
                             // initial state
                             VStack(spacing: 16) {

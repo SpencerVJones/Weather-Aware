@@ -122,7 +122,9 @@ class WeatherService: ObservableObject {
     
     private func fetchCurrentWeather(lat: Double, lon: Double) async throws -> CurrentWeatherResponse {
         // Use Current Weather API (completely free)
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apiKey)&units=metric"
+        let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apiKey)&units=imperial"
+
+        //let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apiKey)&units=metric"
         
         print("Current Weather URL: \(urlString)")
         
