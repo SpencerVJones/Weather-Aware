@@ -11,8 +11,6 @@
 		9D1E3C972E4A576D00B7CB4B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3C962E4A576D00B7CB4B /* FirebaseDatabase */; };
 		9D1E3C992E4A576D00B7CB4B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3C982E4A576D00B7CB4B /* FirebaseFirestore */; };
 		9D1E3C9B2E4A576D00B7CB4B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3C9A2E4A576D00B7CB4B /* FirebaseStorage */; };
-		9D1E3C9D2E4BB58A00B7CB4B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E3C9C2E4BB58A00B7CB4B /* GoogleService-Info.plist */; };
-		9D1E3C9F2E4BB76D00B7CB4B /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 9D1E3C9E2E4BB76D00B7CB4B /* Secrets.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +34,6 @@
 		9D1E3C5B2E4A565900B7CB4B /* WeatherAware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAware.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1E3C6E2E4A565A00B7CB4B /* WeatherAwareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAwareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1E3C782E4A565A00B7CB4B /* WeatherAwareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAwareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D1E3C9C2E4BB58A00B7CB4B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9D1E3C9E2E4BB76D00B7CB4B /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -45,8 +41,26 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				Tests/WeatherAwareTests/WeatherAwareTests.swift,
+				Tests/WeatherAwareUITests/WeatherAwareUITests.swift,
+				Tests/WeatherAwareUITests/WeatherAwareUITestsLaunchTests.swift,
 			);
 			target = 9D1E3C5A2E4A565900B7CB4B /* WeatherAware */;
+		};
+		9D1E3D492E5FFDFD00B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAwareTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Tests/WeatherAwareTests/WeatherAwareTests.swift,
+			);
+			target = 9D1E3C6D2E4A565A00B7CB4B /* WeatherAwareTests */;
+		};
+		9D1E3D4A2E5FFDFD00B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAwareUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Tests/WeatherAwareUITests/WeatherAwareUITests.swift,
+				Tests/WeatherAwareUITests/WeatherAwareUITestsLaunchTests.swift,
+			);
+			target = 9D1E3C772E4A565A00B7CB4B /* WeatherAwareUITests */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -55,18 +69,10 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				9D1E3D332E5C08E600B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAware" target */,
+				9D1E3D492E5FFDFD00B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAwareTests" target */,
+				9D1E3D4A2E5FFDFD00B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAwareUITests" target */,
 			);
 			path = WeatherAware;
-			sourceTree = "<group>";
-		};
-		9D1E3C712E4A565A00B7CB4B /* WeatherAwareTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = WeatherAwareTests;
-			sourceTree = "<group>";
-		};
-		9D1E3C7B2E4A565A00B7CB4B /* WeatherAwareUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = WeatherAwareUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -103,12 +109,8 @@
 		9D1E3C522E4A565900B7CB4B = {
 			isa = PBXGroup;
 			children = (
-				9D1E3C9E2E4BB76D00B7CB4B /* Secrets.xcconfig */,
 				9D1E3C5D2E4A565900B7CB4B /* WeatherAware */,
-				9D1E3C712E4A565A00B7CB4B /* WeatherAwareTests */,
-				9D1E3C7B2E4A565A00B7CB4B /* WeatherAwareUITests */,
 				9D1E3C5C2E4A565900B7CB4B /* Products */,
-				9D1E3C9C2E4BB58A00B7CB4B /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,9 +166,6 @@
 			dependencies = (
 				9D1E3C702E4A565A00B7CB4B /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				9D1E3C712E4A565A00B7CB4B /* WeatherAwareTests */,
-			);
 			name = WeatherAwareTests;
 			packageProductDependencies = (
 			);
@@ -186,9 +185,6 @@
 			);
 			dependencies = (
 				9D1E3C7A2E4A565A00B7CB4B /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				9D1E3C7B2E4A565A00B7CB4B /* WeatherAwareUITests */,
 			);
 			name = WeatherAwareUITests;
 			packageProductDependencies = (
@@ -249,8 +245,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D1E3C9D2E4BB58A00B7CB4B /* GoogleService-Info.plist in Resources */,
-				9D1E3C9F2E4BB76D00B7CB4B /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,139 @@
+//  WeatherInsightsCard.swift
+//  WeatherAware
+//  Created by Spencer Jones on 8/19/25
+
+/*
+A card view that displays quick weather insights based on current and forecasted weather data.
+Uses `InsightRow` components to show tips related to temperature, humidity, wind, and precipitation.
+*/
+
+import Foundation
+import SwiftUI
+
+// A view displaying key weather insights for the user
+struct WeatherInsightsCard: View {
+    // MARK: - Properties
+    let weather: OneCallWeatherData // The weather data used to generate insights
+    
+    // MARK: - Body
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            // Card header
+            Text("Weather Insights")
+                .font(.headline)
+                .fontWeight(.semibold)
+            
+            VStack(spacing: 8) {
+                // Temperature insights
+                if weather.current.temp < 32 {
+                    InsightRow(
+                        icon: "snowflake",
+                        text: "It's quite cold today. Consider layering and warm outerwear.",
+                        color: .blue
+                    )
+                } else if weather.current.temp > 65 {
+                    InsightRow(
+                        icon: "sun.max.fill",
+                        text: "It's warm today. Light, breathable clothing recommended.",
+                        color: .orange
+                    )
+                }
+                
+                // Humidity insights
+                if weather.current.humidity > 70 {
+                    InsightRow(
+                        icon: "humidity.fill",
+                        text: "High humidity detected. Choose moisture-wicking fabrics.",
+                        color: .cyan
+                    )
+                }
+                
+                // Wind insights
+                if weather.current.windSpeed > 5 {
+                    InsightRow(
+                        icon: "wind",
+                        text: "It's windy today. A windbreaker might be helpful.",
+                        color: .green
+                    )
+                }
+                
+                // Precipitation insights
+                if let precipitationChance = weather.daily.first?.pop, precipitationChance > 0.3 {
+                    InsightRow(
+                        icon: "cloud.rain.fill",
+                        text: "High chance of precipitation. Don't forget an umbrella!",
+                        color: .gray
+                    )
+                }
+            }
+        }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(16)
+        .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 4)
+    }
+}
+
+// MARK: - PREVIEW
+#Preview {
+    // Mock current weather
+    let mockCurrent = OneCallWeatherData.Current(
+        dt: Int(Date().timeIntervalSince1970),
+        sunrise: nil,
+        sunset: nil,
+        temp: 28,
+        feelsLike: 30,
+        pressure: 1012,
+        humidity: 75,
+        dewPoint: 22,
+        uvi: 6,
+        clouds: 20,
+        visibility: 10000,
+        windSpeed: 6,
+        windDeg: 180,
+        windGust: nil,
+        weather: [
+            OneCallWeatherData.Weather(id: 800, main: "Clear", description: "clear sky", icon: "01d")
+        ]
+    )
+    
+    // Mock daily forecast data
+    let mockDaily = [
+        OneCallWeatherData.Daily(
+            dt: Int(Date().timeIntervalSince1970),
+            sunrise: 0,
+            sunset: 0,
+            moonrise: 0,
+            moonset: 0,
+            moonPhase: 0.5,
+            summary: "Clear sky",
+            temp: OneCallWeatherData.Daily.Temp(day: 28, min: 20, max: 30, night: 22, eve: 27, morn: 20),
+            feelsLike: OneCallWeatherData.Daily.FeelsLike(day: 30, night: 22, eve: 28, morn: 20),
+            pressure: 1012,
+            humidity: 75,
+            dewPoint: 22,
+            windSpeed: 6,
+            windDeg: 180,
+            windGust: nil,
+            weather: [OneCallWeatherData.Weather(id: 500, main: "Rain", description: "light rain", icon: "10d")],
+            clouds: 20,
+            pop: 0.6,              
+            uvi: 6
+        )
+    ]
+    
+    // Mock full OneCallWeatherData
+    let mockWeather = OneCallWeatherData(
+        lat: 37.7749,
+        lon: -122.4194,
+        timezone: "PST",
+        timezoneOffset: -28800,
+        current: mockCurrent,
+        hourly: nil,
+        daily: mockDaily
+    )
+    
+    // Preview the card
+    WeatherInsightsCard(weather: mockWeather)
+        .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+}
