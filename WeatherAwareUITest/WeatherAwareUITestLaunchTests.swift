@@ -1,13 +1,15 @@
 //
-//  WeatherAwareUITestsLaunchTests.swift
-//  WeatherAwareUITests
+//  WeatherAwareUITestLaunchTests.swift
+//  WeatherAwareUITest
 //
-//  Created by Spencer Jones on 8/11/25.
+//  Created by Spencer Jones on 8/28/25.
 //
 
 import XCTest
+@testable import WeatherAware
 
-final class WeatherAwareUITestsLaunchTests: XCTestCase {
+
+final class WeatherAwareUITestLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

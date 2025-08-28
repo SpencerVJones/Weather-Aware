@@ -1,13 +1,10 @@
-//
-//  WeatherAwareTests.swift
-//  WeatherAwareTests
-//
-//  Created by Spencer Jones on 8/11/25.
-//
+//  WeatherAwareTest.swift
+//  WeatherAwareTest
+//  Created by Spencer Jones on 8/24/25.
 
 import XCTest
 
-final class WeatherAwareTests: XCTestCase {
+final class WeatherAwareTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -11,17 +11,21 @@
 		9D1E3C972E4A576D00B7CB4B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3C962E4A576D00B7CB4B /* FirebaseDatabase */; };
 		9D1E3C992E4A576D00B7CB4B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3C982E4A576D00B7CB4B /* FirebaseFirestore */; };
 		9D1E3C9B2E4A576D00B7CB4B /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3C9A2E4A576D00B7CB4B /* FirebaseStorage */; };
+		9D1E3DD02E60D60300B7CB4B /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3DCF2E60D60300B7CB4B /* ViewInspector */; };
+		9D1E3DD22E60D66200B7CB4B /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3DD12E60D66200B7CB4B /* FirebaseCore */; };
+		9D1E3DD42E60D68300B7CB4B /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3DD32E60D68300B7CB4B /* FirebaseCore */; };
+		9D1E3DD62E60D6AE00B7CB4B /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9D1E3DD52E60D6AE00B7CB4B /* FirebaseCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9D1E3C6F2E4A565A00B7CB4B /* PBXContainerItemProxy */ = {
+		9D1E3D9C2E60C01200B7CB4B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9D1E3C532E4A565900B7CB4B /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9D1E3C5A2E4A565900B7CB4B;
 			remoteInfo = WeatherAware;
 		};
-		9D1E3C792E4A565A00B7CB4B /* PBXContainerItemProxy */ = {
+		9D1E3DAB2E60C03500B7CB4B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9D1E3C532E4A565900B7CB4B /* Project object */;
 			proxyType = 1;
@@ -32,8 +36,8 @@
 
 /* Begin PBXFileReference section */
 		9D1E3C5B2E4A565900B7CB4B /* WeatherAware.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherAware.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D1E3C6E2E4A565A00B7CB4B /* WeatherAwareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAwareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D1E3C782E4A565A00B7CB4B /* WeatherAwareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAwareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1E3D982E60C01200B7CB4B /* WeatherAwareTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAwareTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D1E3DA52E60C03500B7CB4B /* WeatherAwareUITest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAwareUITest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -41,26 +45,22 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
-				Tests/WeatherAwareTests/WeatherAwareTests.swift,
-				Tests/WeatherAwareUITests/WeatherAwareUITests.swift,
-				Tests/WeatherAwareUITests/WeatherAwareUITestsLaunchTests.swift,
 			);
 			target = 9D1E3C5A2E4A565900B7CB4B /* WeatherAware */;
 		};
-		9D1E3D492E5FFDFD00B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAwareTests" target */ = {
+		9D1E3DE92E60E00A00B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAwareTest" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Tests/WeatherAwareTests/WeatherAwareTests.swift,
+				WeatherAware.xcdatamodeld,
 			);
-			target = 9D1E3C6D2E4A565A00B7CB4B /* WeatherAwareTests */;
+			target = 9D1E3D972E60C01200B7CB4B /* WeatherAwareTest */;
 		};
-		9D1E3D4A2E5FFDFD00B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAwareUITests" target */ = {
+		9D1E3DEB2E60EAD600B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAwareUITest" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Tests/WeatherAwareUITests/WeatherAwareUITests.swift,
-				Tests/WeatherAwareUITests/WeatherAwareUITestsLaunchTests.swift,
+				WeatherAware.xcdatamodeld,
 			);
-			target = 9D1E3C772E4A565A00B7CB4B /* WeatherAwareUITests */;
+			target = 9D1E3DA42E60C03500B7CB4B /* WeatherAwareUITest */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -69,10 +69,20 @@
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				9D1E3D332E5C08E600B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAware" target */,
-				9D1E3D492E5FFDFD00B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAwareTests" target */,
-				9D1E3D4A2E5FFDFD00B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAwareUITests" target */,
+				9D1E3DE92E60E00A00B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAwareTest" target */,
+				9D1E3DEB2E60EAD600B7CB4B /* Exceptions for "WeatherAware" folder in "WeatherAwareUITest" target */,
 			);
 			path = WeatherAware;
+			sourceTree = "<group>";
+		};
+		9D1E3D992E60C01200B7CB4B /* WeatherAwareTest */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WeatherAwareTest;
+			sourceTree = "<group>";
+		};
+		9D1E3DA62E60C03500B7CB4B /* WeatherAwareUITest */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WeatherAwareUITest;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -83,23 +93,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D1E3C972E4A576D00B7CB4B /* FirebaseDatabase in Frameworks */,
+				9D1E3DD42E60D68300B7CB4B /* FirebaseCore in Frameworks */,
 				9D1E3C9B2E4A576D00B7CB4B /* FirebaseStorage in Frameworks */,
 				9D1E3C952E4A576D00B7CB4B /* FirebaseAnalytics in Frameworks */,
 				9D1E3C992E4A576D00B7CB4B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D1E3C6B2E4A565A00B7CB4B /* Frameworks */ = {
+		9D1E3D952E60C01200B7CB4B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1E3DD62E60D6AE00B7CB4B /* FirebaseCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D1E3C752E4A565A00B7CB4B /* Frameworks */ = {
+		9D1E3DA22E60C03500B7CB4B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1E3DD22E60D66200B7CB4B /* FirebaseCore in Frameworks */,
+				9D1E3DD02E60D60300B7CB4B /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				9D1E3C5D2E4A565900B7CB4B /* WeatherAware */,
+				9D1E3D992E60C01200B7CB4B /* WeatherAwareTest */,
+				9D1E3DA62E60C03500B7CB4B /* WeatherAwareUITest */,
 				9D1E3C5C2E4A565900B7CB4B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -118,8 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				9D1E3C5B2E4A565900B7CB4B /* WeatherAware.app */,
-				9D1E3C6E2E4A565A00B7CB4B /* WeatherAwareTests.xctest */,
-				9D1E3C782E4A565A00B7CB4B /* WeatherAwareUITests.xctest */,
+				9D1E3D982E60C01200B7CB4B /* WeatherAwareTest.xctest */,
+				9D1E3DA52E60C03500B7CB4B /* WeatherAwareUITest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,49 +164,59 @@
 				9D1E3C962E4A576D00B7CB4B /* FirebaseDatabase */,
 				9D1E3C982E4A576D00B7CB4B /* FirebaseFirestore */,
 				9D1E3C9A2E4A576D00B7CB4B /* FirebaseStorage */,
+				9D1E3DD32E60D68300B7CB4B /* FirebaseCore */,
 			);
 			productName = WeatherAware;
 			productReference = 9D1E3C5B2E4A565900B7CB4B /* WeatherAware.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9D1E3C6D2E4A565A00B7CB4B /* WeatherAwareTests */ = {
+		9D1E3D972E60C01200B7CB4B /* WeatherAwareTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D1E3C852E4A565A00B7CB4B /* Build configuration list for PBXNativeTarget "WeatherAwareTests" */;
+			buildConfigurationList = 9D1E3D9E2E60C01200B7CB4B /* Build configuration list for PBXNativeTarget "WeatherAwareTest" */;
 			buildPhases = (
-				9D1E3C6A2E4A565A00B7CB4B /* Sources */,
-				9D1E3C6B2E4A565A00B7CB4B /* Frameworks */,
-				9D1E3C6C2E4A565A00B7CB4B /* Resources */,
+				9D1E3D942E60C01200B7CB4B /* Sources */,
+				9D1E3D952E60C01200B7CB4B /* Frameworks */,
+				9D1E3D962E60C01200B7CB4B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9D1E3C702E4A565A00B7CB4B /* PBXTargetDependency */,
+				9D1E3D9D2E60C01200B7CB4B /* PBXTargetDependency */,
 			);
-			name = WeatherAwareTests;
+			fileSystemSynchronizedGroups = (
+				9D1E3D992E60C01200B7CB4B /* WeatherAwareTest */,
+			);
+			name = WeatherAwareTest;
 			packageProductDependencies = (
+				9D1E3DD52E60D6AE00B7CB4B /* FirebaseCore */,
 			);
-			productName = WeatherAwareTests;
-			productReference = 9D1E3C6E2E4A565A00B7CB4B /* WeatherAwareTests.xctest */;
+			productName = WeatherAwareTest;
+			productReference = 9D1E3D982E60C01200B7CB4B /* WeatherAwareTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9D1E3C772E4A565A00B7CB4B /* WeatherAwareUITests */ = {
+		9D1E3DA42E60C03500B7CB4B /* WeatherAwareUITest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D1E3C882E4A565A00B7CB4B /* Build configuration list for PBXNativeTarget "WeatherAwareUITests" */;
+			buildConfigurationList = 9D1E3DAD2E60C03500B7CB4B /* Build configuration list for PBXNativeTarget "WeatherAwareUITest" */;
 			buildPhases = (
-				9D1E3C742E4A565A00B7CB4B /* Sources */,
-				9D1E3C752E4A565A00B7CB4B /* Frameworks */,
-				9D1E3C762E4A565A00B7CB4B /* Resources */,
+				9D1E3DA12E60C03500B7CB4B /* Sources */,
+				9D1E3DA22E60C03500B7CB4B /* Frameworks */,
+				9D1E3DA32E60C03500B7CB4B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9D1E3C7A2E4A565A00B7CB4B /* PBXTargetDependency */,
+				9D1E3DAC2E60C03500B7CB4B /* PBXTargetDependency */,
 			);
-			name = WeatherAwareUITests;
+			fileSystemSynchronizedGroups = (
+				9D1E3DA62E60C03500B7CB4B /* WeatherAwareUITest */,
+			);
+			name = WeatherAwareUITest;
 			packageProductDependencies = (
+				9D1E3DCF2E60D60300B7CB4B /* ViewInspector */,
+				9D1E3DD12E60D66200B7CB4B /* FirebaseCore */,
 			);
-			productName = WeatherAwareUITests;
-			productReference = 9D1E3C782E4A565A00B7CB4B /* WeatherAwareUITests.xctest */;
+			productName = WeatherAwareUITest;
+			productReference = 9D1E3DA52E60C03500B7CB4B /* WeatherAwareUITest.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -206,11 +232,11 @@
 					9D1E3C5A2E4A565900B7CB4B = {
 						CreatedOnToolsVersion = 16.4;
 					};
-					9D1E3C6D2E4A565A00B7CB4B = {
+					9D1E3D972E60C01200B7CB4B = {
 						CreatedOnToolsVersion = 16.4;
 						TestTargetID = 9D1E3C5A2E4A565900B7CB4B;
 					};
-					9D1E3C772E4A565A00B7CB4B = {
+					9D1E3DA42E60C03500B7CB4B = {
 						CreatedOnToolsVersion = 16.4;
 						TestTargetID = 9D1E3C5A2E4A565900B7CB4B;
 					};
@@ -227,6 +253,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				9D1E3C932E4A574300B7CB4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9D1E3DCE2E60D60300B7CB4B /* XCRemoteSwiftPackageReference "ViewInspector" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9D1E3C5C2E4A565900B7CB4B /* Products */;
@@ -234,8 +261,8 @@
 			projectRoot = "";
 			targets = (
 				9D1E3C5A2E4A565900B7CB4B /* WeatherAware */,
-				9D1E3C6D2E4A565A00B7CB4B /* WeatherAwareTests */,
-				9D1E3C772E4A565A00B7CB4B /* WeatherAwareUITests */,
+				9D1E3D972E60C01200B7CB4B /* WeatherAwareTest */,
+				9D1E3DA42E60C03500B7CB4B /* WeatherAwareUITest */,
 			);
 		};
 /* End PBXProject section */
@@ -248,14 +275,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D1E3C6C2E4A565A00B7CB4B /* Resources */ = {
+		9D1E3D962E60C01200B7CB4B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D1E3C762E4A565A00B7CB4B /* Resources */ = {
+		9D1E3DA32E60C03500B7CB4B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,14 +299,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D1E3C6A2E4A565A00B7CB4B /* Sources */ = {
+		9D1E3D942E60C01200B7CB4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D1E3C742E4A565A00B7CB4B /* Sources */ = {
+		9D1E3DA12E60C03500B7CB4B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -289,15 +316,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9D1E3C702E4A565A00B7CB4B /* PBXTargetDependency */ = {
+		9D1E3D9D2E60C01200B7CB4B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9D1E3C5A2E4A565900B7CB4B /* WeatherAware */;
-			targetProxy = 9D1E3C6F2E4A565A00B7CB4B /* PBXContainerItemProxy */;
+			targetProxy = 9D1E3D9C2E60C01200B7CB4B /* PBXContainerItemProxy */;
 		};
-		9D1E3C7A2E4A565A00B7CB4B /* PBXTargetDependency */ = {
+		9D1E3DAC2E60C03500B7CB4B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9D1E3C5A2E4A565900B7CB4B /* WeatherAware */;
-			targetProxy = 9D1E3C792E4A565A00B7CB4B /* PBXContainerItemProxy */;
+			targetProxy = 9D1E3DAB2E60C03500B7CB4B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -498,7 +525,7 @@
 			};
 			name = Release;
 		};
-		9D1E3C862E4A565A00B7CB4B /* Debug */ = {
+		9D1E3D9F2E60C01200B7CB4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -507,21 +534,18 @@
 				DEVELOPMENT_TEAM = GD6H63ZU48;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = makesspence.WeatherAwareTests;
+				PRODUCT_BUNDLE_IDENTIFIER = makesspence.WeatherAwareTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherAware.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WeatherAware";
-				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Debug;
 		};
-		9D1E3C872E4A565A00B7CB4B /* Release */ = {
+		9D1E3DA02E60C01200B7CB4B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -530,21 +554,19 @@
 				DEVELOPMENT_TEAM = GD6H63ZU48;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = makesspence.WeatherAwareTests;
+				PRODUCT_BUNDLE_IDENTIFIER = makesspence.WeatherAwareTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeatherAware.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WeatherAware";
-				XROS_DEPLOYMENT_TARGET = 2.5;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		9D1E3C892E4A565A00B7CB4B /* Debug */ = {
+		9D1E3DAE2E60C03500B7CB4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -552,21 +574,18 @@
 				DEVELOPMENT_TEAM = GD6H63ZU48;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = makesspence.WeatherAwareUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = makesspence.WeatherAwareUITest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = WeatherAware;
-				XROS_DEPLOYMENT_TARGET = 2.5;
 			};
 			name = Debug;
 		};
-		9D1E3C8A2E4A565A00B7CB4B /* Release */ = {
+		9D1E3DAF2E60C03500B7CB4B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -574,17 +593,15 @@
 				DEVELOPMENT_TEAM = GD6H63ZU48;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = makesspence.WeatherAwareUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = makesspence.WeatherAwareUITest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = WeatherAware;
-				XROS_DEPLOYMENT_TARGET = 2.5;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -609,20 +626,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D1E3C852E4A565A00B7CB4B /* Build configuration list for PBXNativeTarget "WeatherAwareTests" */ = {
+		9D1E3D9E2E60C01200B7CB4B /* Build configuration list for PBXNativeTarget "WeatherAwareTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9D1E3C862E4A565A00B7CB4B /* Debug */,
-				9D1E3C872E4A565A00B7CB4B /* Release */,
+				9D1E3D9F2E60C01200B7CB4B /* Debug */,
+				9D1E3DA02E60C01200B7CB4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D1E3C882E4A565A00B7CB4B /* Build configuration list for PBXNativeTarget "WeatherAwareUITests" */ = {
+		9D1E3DAD2E60C03500B7CB4B /* Build configuration list for PBXNativeTarget "WeatherAwareUITest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9D1E3C892E4A565A00B7CB4B /* Debug */,
-				9D1E3C8A2E4A565A00B7CB4B /* Release */,
+				9D1E3DAE2E60C03500B7CB4B /* Debug */,
+				9D1E3DAF2E60C03500B7CB4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -636,6 +653,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 12.1.0;
+			};
+		};
+		9D1E3DCE2E60D60300B7CB4B /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -660,6 +685,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9D1E3C932E4A574300B7CB4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		9D1E3DCF2E60D60300B7CB4B /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D1E3DCE2E60D60300B7CB4B /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+		9D1E3DD12E60D66200B7CB4B /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D1E3C932E4A574300B7CB4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		9D1E3DD32E60D68300B7CB4B /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D1E3C932E4A574300B7CB4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		9D1E3DD52E60D6AE00B7CB4B /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D1E3C932E4A574300B7CB4B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
