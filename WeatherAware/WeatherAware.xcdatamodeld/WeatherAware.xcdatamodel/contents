@@ -10,7 +10,9 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="occasion" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="typeRaw" optional="YES" attributeType="String"/>
         <attribute name="weatherTypes" optional="YES" attributeType="String"/>
+        <attribute name="weatherTypesRaw" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>

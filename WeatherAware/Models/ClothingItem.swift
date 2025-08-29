@@ -12,6 +12,8 @@ import Foundation
 import SwiftUI
 
 extension ClothingItem {
+    
+    
     // Returns a string representing the temperature range suitable for this clothing item.
     var temperatureRangeText: String {
         return "\(Int(minTemp))-\(Int(maxTemp))°C"

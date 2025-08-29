@@ -17,26 +17,31 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext // Core Data context
     
     // MARK: - State Objects
-    @StateObject private var weatherService = WeatherService() // Handles fetching and storing weather data
-    @StateObject private var locationManager = LocationManager() // Handles location permission and updates
+    @StateObject private var weatherService = WeatherService()
+    @StateObject private var locationManager = LocationManager()
+    @StateObject private var wardrobeManager: WardrobeManager
+    @StateObject private var recommendationEngine: RecommendationEngine
+    
+    // MARK: - Init
+    init() {
+        let context = PersistenceController.shared.container.viewContext
+        let wardrobe = WardrobeManager(viewContext: context)
+        _wardrobeManager = StateObject(wrappedValue: wardrobe)
+        _recommendationEngine = StateObject(wrappedValue: RecommendationEngine(wardrobeManager: wardrobe))
+    }
     
     var body: some View {
-        // Initialize single instances for this app session
-        let wardrobeManager = WardrobeManager(viewContext: viewContext)
-        let recommendationEngine = RecommendationEngine(wardrobeManager: wardrobeManager)
-        
-        // Pass environment objects down the view hierarchy
         ContentViewContent()
             .environmentObject(weatherService)
             .environmentObject(locationManager)
             .environmentObject(wardrobeManager)
             .environmentObject(recommendationEngine)
             .onAppear {
-                // Request location access when app launches
                 locationManager.request()
             }
     }
 }
+
 
 // A separate view for the TabView content to keep ContentView clean
 struct ContentViewContent: View {

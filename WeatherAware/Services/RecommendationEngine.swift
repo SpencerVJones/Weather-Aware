@@ -35,6 +35,12 @@ class RecommendationEngine: ObservableObject {
             return tempF >= item.minTemp && tempF <= item.maxTemp && item.isSuitableFor(weather: weatherMain)
         }
         
+        for item in wardrobeManager.clothingItems {
+            print("Item: \(item.name ?? "Unnamed")")
+            print("  Temp range: \(item.minTemp) - \(item.maxTemp), Current: \(tempF)")
+            print("  Weather OK? \(item.isSuitableFor(weather: weatherMain))")
+        }
+        
         // Create the optimal outfit
         let recommendation = createOptimalOutfit(
             from: suitableItems,
@@ -63,9 +69,13 @@ class RecommendationEngine: ObservableObject {
         
         for category in categories {
             let categoryItems = items.filter { $0.type == category }
+            print("Category \(category): found \(categoryItems.count) items")
             if let best = selectBestItem(from: categoryItems, temperature: temperature) {
                 outfit.append(best)
-            } else { confidence -= 0.2 } // Reduce confidence if missing essential item
+            } else {
+                print("⚠️ No item selected for \(category)")
+                confidence -= 0.2
+            }
         }
         
         // Add outerwear if cold or rainy/snowy
