@@ -2,10 +2,6 @@
 //  WeatherAwareUITest
 //  Created by Spencer Jones on 8/28/25
 
-// OutfitRecommendationCardLogicTests.swift
-// WeatherAwareUITest
-// Created by Spencer Jones on 8/28/25
-
 import XCTest
 
 // MARK: - Fresh Mock Types (unique names to avoid conflicts)
