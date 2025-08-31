@@ -22,7 +22,7 @@ class WeatherService: ObservableObject {
     @Published var errorMessage: String? // Stores a user-friendly error message if a fetch fails
     
     // MARK: - Private Properties
-    private let apiKey = "ffb048678081e3feb7407951a2f12d40" // OpenWeatherMap API key
+    private let apiKey = "YOUR API KEY" // OpenWeatherMap API key
     private let session = URLSession.shared
     
     // MARK: - Public Methods
